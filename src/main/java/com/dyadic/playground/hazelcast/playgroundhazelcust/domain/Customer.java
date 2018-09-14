@@ -1,16 +1,13 @@
 package com.dyadic.playground.hazelcast.playgroundhazelcust.domain;
 
+import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
-
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
 
 @Document
 public class Customer {
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
-    private String id;
+    private ObjectId id;
     private String name;
     private String surname;
 
@@ -19,11 +16,11 @@ public class Customer {
         this.surname = surname;
     }
 
-    public String getId() {
+    public ObjectId getId() {
         return id;
     }
 
-    public void setId(String id) {
+    public void setId(ObjectId id) {
         this.id = id;
     }
 
