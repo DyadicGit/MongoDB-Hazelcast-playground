@@ -1,0 +1,7 @@
+mongod --dbpath=%mongodbdata% --bind_ip 127.0.0.1
+
+// net start MongoDB
+net stop MongoDB
+
+mongo --host localhost:27017
+db.enableFreeMonitoring()
