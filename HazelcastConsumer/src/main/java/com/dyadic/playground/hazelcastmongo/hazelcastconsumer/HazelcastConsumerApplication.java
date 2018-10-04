@@ -8,5 +8,6 @@ public class HazelcastConsumerApplication {
 
     public static void main(String[] args) {
         SpringApplication.run(HazelcastConsumerApplication.class, args);
+        HazelcastClientNode.getCustomersList();
     }
 }

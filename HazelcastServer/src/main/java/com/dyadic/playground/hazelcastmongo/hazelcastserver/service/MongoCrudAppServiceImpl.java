@@ -29,7 +29,7 @@ public class MongoCrudAppServiceImpl implements MongoCrudAppService, Initializin
         });
         return customers.stream()
                 .map(customer ->
-                        Optional.ofNullable(customer.getName()).orElse("--") + Optional.ofNullable(customer.getSurname()).orElse("--")
+                        Optional.ofNullable(customer.getName()).orElse("--") +", "+ Optional.ofNullable(customer.getSurname()).orElse("--")
                 ).collect(Collectors.toList());
     }
 
@@ -38,7 +38,7 @@ public class MongoCrudAppServiceImpl implements MongoCrudAppService, Initializin
         this.setApiCustomerUrl(String.format("%s%s", this.baseUrl, this.customerUrl));
     }
 
-    public void setApiCustomerUrl(String apiCustomerUrl) {
+    private void setApiCustomerUrl(String apiCustomerUrl) {
         this.apiCustomerUrl = apiCustomerUrl;
     }
 }
