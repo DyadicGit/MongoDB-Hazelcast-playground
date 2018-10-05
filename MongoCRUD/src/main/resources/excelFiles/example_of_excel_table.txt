@@ -1,0 +1,2 @@
+JAR_KODAS		PAVAD				ADRES											VIETOVE	
+110005648		UAB "LABBIS"		Žalgirio g. 92, Vilniaus m., Vilniaus m. sav.	13	
