@@ -37,7 +37,7 @@ public class ExcelController {
 
             List<Map<String, String>> excelMap = parseExcelFileToMap(excelFile);
             List<Company> companies =  excelMapToCompanyList(excelMap);
-            if (saveToMongodb) {
+            if (Optional.ofNullable(saveToMongodb).isPresent()) {
                 System.out.println("ToDo: save it!");
                 savedToMongo = true;
             }
