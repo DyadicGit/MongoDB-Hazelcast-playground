@@ -13,4 +13,14 @@
             </tcp-ip>
         </join>
     </network>
+    <map name="company">
+        <map-store enabled="true" initial-mode="LAZY">
+            <class-name>com.dyadic.playground.hazelcastmongo.hazelcastserver.config.CompanyMongoMapStore</class-name>
+            <properties>
+                <property name="mongo.url">mongodb://localhost:27017/</property>
+                <property name="mongo.db">test</property>
+                <property name="mongo.collection">company</property>
+            </properties>
+        </map-store>
+    </map>
 </hazelcast>

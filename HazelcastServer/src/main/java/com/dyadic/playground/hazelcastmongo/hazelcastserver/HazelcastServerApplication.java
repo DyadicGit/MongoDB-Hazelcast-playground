@@ -8,7 +8,6 @@ import java.io.IOException;
 
 @SpringBootApplication
 public class HazelcastServerApplication {
-
     public static void main(String[] args) throws IOException {
         ApplicationContext applicationContext = SpringApplication.run(HazelcastServerApplication.class, args);
         HazelcastServerNode hazelcastServerNode = (HazelcastServerNode) applicationContext.getBean("hazelcastServerNode");
