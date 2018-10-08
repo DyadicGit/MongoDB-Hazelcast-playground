@@ -4,12 +4,17 @@ import com.dyadic.playground.mongocrud.domain.Customer;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.mongodb.core.MongoTemplate;
 import org.springframework.stereotype.Repository;
+import org.springframework.stereotype.Service;
 
-@Repository
+@Service
 public class CustomerServiceImpl implements CustomerService {
 
+    private final MongoTemplate mongoTemplate;
+
     @Autowired
-    private MongoTemplate mongoTemplate;
+    public CustomerServiceImpl(MongoTemplate mongoTemplate) {
+        this.mongoTemplate = mongoTemplate;
+    }
 
     @Override
     public void addNewCustomer(Customer customer) {

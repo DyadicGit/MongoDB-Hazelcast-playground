@@ -1,6 +1,7 @@
 package com.dyadic.playground.mongocrud.controller;
 
 import com.dyadic.playground.mongocrud.domain.Company;
+import com.dyadic.playground.mongocrud.service.CompanyService;
 import org.apache.poi.ss.usermodel.DataFormatter;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.ss.usermodel.Sheet;
@@ -22,6 +23,12 @@ import java.util.stream.Collectors;
 @Controller
 @RequestMapping("/excel")
 public class ExcelController {
+    private final CompanyService companyService;
+
+    public ExcelController(CompanyService companyService) {
+        this.companyService = companyService;
+    }
+
     @GetMapping("/upload")
     String uploadAndParseExcelFile(Model model) {
         return "api/companies";
@@ -38,7 +45,7 @@ public class ExcelController {
             List<Map<String, String>> excelMap = parseExcelFileToMap(excelFile);
             List<Company> companies =  excelMapToCompanyList(excelMap);
             if (Optional.ofNullable(saveToMongodb).isPresent()) {
-                System.out.println("ToDo: save it!");
+                companyService.addNewCompanies(companies);
                 savedToMongo = true;
             }
             model.addAttribute("companies", companies);
