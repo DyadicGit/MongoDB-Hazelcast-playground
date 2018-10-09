@@ -1,6 +1,7 @@
 package com.dyadic.playground.hazelcastmongo.hazelcastserver;
 
 import com.dyadic.playground.hazelcastmongo.hazelcastserver.config.ReadWriteThroughCache;
+import com.dyadic.playground.hazelcastmongo.hazelcastserver.mappers.CompanyPortableFactory;
 import com.hazelcast.config.Config;
 import com.hazelcast.config.MapConfig;
 import com.hazelcast.config.MapStoreConfig;
@@ -23,6 +24,7 @@ public class ProgrammaticHazelcastServerApplication {
                 .setProperty("mongo.db", "test")
                 .setProperty("mongo.collection", "company");
 
+        config.getSerializationConfig().addPortableFactory(1, new CompanyPortableFactory());
         final HazelcastInstance hazelcastInstance = newHazelcastInstance(config);
         new ReadWriteThroughCache(hazelcastInstance).run();
     }
