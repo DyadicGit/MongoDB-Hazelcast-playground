@@ -1,4 +1,4 @@
-package com.dyadic.playground.hazelcastmongo.hazelcastserver.mappers;
+package com.dyadic.playground.hazelcastmongo.hazelcastconsumer.domain;
 
 import com.hazelcast.nio.serialization.Portable;
 import com.hazelcast.nio.serialization.PortableReader;

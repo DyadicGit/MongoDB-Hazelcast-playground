@@ -1,6 +1,6 @@
-package com.dyadic.playground.hazelcastmongo.hazelcastserver.config;
+package com.dyadic.playground.hazelcastmongo.hazelcastserver.store;
 
-import com.dyadic.playground.hazelcastmongo.hazelcastserver.mappers.Company;
+import com.dyadic.playground.hazelcastmongo.hazelcastserver.domain.Company;
 import com.hazelcast.core.HazelcastInstance;
 import com.hazelcast.core.MapLoaderLifecycleSupport;
 import com.hazelcast.core.MapStore;

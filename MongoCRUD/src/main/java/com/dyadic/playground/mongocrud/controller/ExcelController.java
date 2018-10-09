@@ -43,7 +43,7 @@ public class ExcelController {
             InputStream excelFile = multipartFile.getInputStream();
 
             List<Map<String, String>> excelMap = parseExcelFileToMap(excelFile);
-            List<Company> companies =  excelMapToCompanyList(excelMap);
+            List<Company> companies = excelMapToCompanyList(excelMap);
             if (Optional.ofNullable(saveToMongodb).isPresent()) {
                 companyService.addNewCompanies(companies);
                 savedToMongo = true;

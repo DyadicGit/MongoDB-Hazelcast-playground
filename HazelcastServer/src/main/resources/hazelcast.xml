@@ -13,9 +13,11 @@
             </tcp-ip>
         </join>
     </network>
+
+    <!--    with programmatic running below <map> & <serialization> nodes are not needed-->
     <map name="company">
         <map-store enabled="true" initial-mode="LAZY">
-            <class-name>com.dyadic.playground.hazelcastmongo.hazelcastserver.config.CompanyMongoMapStore</class-name>
+            <class-name>com.dyadic.playground.hazelcastmongo.hazelcastserver.store.CompanyMongoMapStore</class-name>
             <properties>
                 <property name="mongo.url">mongodb://localhost:27017/</property>
                 <property name="mongo.db">test</property>
@@ -27,7 +29,7 @@
         <portable-version>0</portable-version>
         <portable-factories>
             <portable-factory factory-id="1">
-                com.dyadic.playground.hazelcastmongo.hazelcastserver.mappers.CompanyPortableFactory
+                com.dyadic.playground.hazelcastmongo.hazelcastserver.domain.CompanyPortableFactory
             </portable-factory>
         </portable-factories>
     </serialization>
